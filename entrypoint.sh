@@ -12,6 +12,7 @@ aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}" > ~/.aws/credentials
 aws s3 sync ${SOURCE_DIR} s3://${AWS_S3_BUCKET} \
             --follow-symlinks \
             --delete \
-            --region ${AWS_REGION} $*
+            --region ${AWS_REGION}
+            --endpoint ${AWS_ENDPOINT} $*
 
 rm -rf ~/.aws
